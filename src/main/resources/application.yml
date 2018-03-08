@@ -1,0 +1,16 @@
+app:
+  name: demo
+
+server:
+  port:8085
+
+jwt:
+  header: Authorization
+  expires_in: 600 # 10 minutes
+  secret: shriramdev
+  cookie: AUTH-TOKEN
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.example.demo: DEBUG
