@@ -1,12 +1,12 @@
 # About project
 
-I have separated the two Dockerfiles for both front and back end and hence two different images. This is for scalability in that front end and back end guys can function separately and do separate builds.
+I have separated the two Dockerfiles for both front and back end and hence two different docker images. This is for scalability in that front end and back end guys can function separately and do separate builds. But both images will be on the same instance.
 
 ## Backend
 - This is a simple light weight Spring Boot application in a Micro services ecosystem powered by Docker. 
 - Please note that I have taken the liberty to implement the in-memory H2 database offered by Spring rather than storing in memory.
 - I have also integrated Swagger just to showcase functionality. The documentation may not be that comprehensive. It can be accessed from 192.168.99.100:8085/swagger-ui.html or localhost:8085/swagger-ui.html depending on how you deploy it.(explained later)
-- As per requirements, only admin user can read write update and delete users. 
+- As per requirements, only admin user can read, write, update and delete users. 
 
 ## Front end
 - Completely developed using Angular 5(latest), HTML5, typescript and node.js
@@ -30,14 +30,18 @@ In case you are using linux or mac, the installation should be straight forward.
 1. Open command prompt and navigate to the root of the project UserProfile.
 2. Build the docker image using the following command
 ```
-> docker build -f Dockerfile -t docker-backend .
+Rootfolder> docker build -f Dockerfile -t docker-backend .
+```
+In case you face any issues like "the docker daemon may not be running" run the following command
+```
+Rootfolder> @for /f "tokens=*" %i IN ('docker-machine env') DO @%i
 ```
 It will take a while to import the required dependencies for the first time. Should be fast from second time as it will pick up from cache
 3. Run the docker image
 ```
-> docker run -p 8085:8085 docker-backend
+Rootfolder> docker run -p 8085:8085 docker-backend
 ```
-4. This should bring up the Spring boot embedded tomcat instance and it should run in the port 8085.
+4. This should bring up the Spring boot embedded tomcat instance and it should run in the port 8085. Go to the browser and access http://192.168.99.100:8085/. You should see an Access Denied page, which is fine, as it proves that Spring is up and running in Docker.
 
 ### Front End Deployment
 
@@ -51,7 +55,13 @@ This is very similar to the backend.
 ```
 > docker build -f Dockerfile -t docker-frontend .
 ```
+
 It will take a while to import the required dependencies for the first time. Should be fast from second time as it will pick up from cache.
+
+In case you face any issues like "the docker daemon may not be running" run the following command
+```
+Rootfolder> @for /f "tokens=*" %i IN ('docker-machine env') DO @%i
+```
 3. Run the docker image
 ```
 > docker run -p 4200:4200 docker-backend
