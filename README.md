@@ -7,6 +7,7 @@ I have separated the two Dockerfiles for both front and back end and hence two d
 - Please note that I have taken the liberty to implement the in-memory H2 database offered by Spring rather than storing in memory.
 - I have also integrated Swagger just to showcase functionality. The documentation may not be that comprehensive. It can be accessed from 192.168.99.100:8085/swagger-ui.html or localhost:8085/swagger-ui.html depending on how you deploy it.(explained later)
 - As per requirements, only admin user can read, write, update and delete users. 
+- Also implemented JWT token authentication.
 
 ## Front end
 - Completely developed using Angular 5(latest), HTML5, typescript and node.js
@@ -84,3 +85,13 @@ Normal User
 ===========
 Username: normaluser
 pass: 123
+
+
+# Difficulties faced and Miscellaneous steps
+
+1. Had to do quite a lot of workarounds to make sure Docker works fine in windows. Had to add an inbound firewall rule as well. Refer to this video, proved very handy:
+https://www.youtube.com/watch?v=ymlWt1MqURY
+
+2. There is a file in the frontend project called proxy.conf.json. Currently the ip is configured as 192.168.99.100. If you want the projects to work on localhost, make sure it is changed to localhost. Ideally, there should be a devmode and production mode.
+
+
