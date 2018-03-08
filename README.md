@@ -31,7 +31,7 @@ https://docs.docker.com/toolbox/toolbox_install_windows/
 0. In case you are using windows, start up docker by clicking on "Docker Quickstart terminal". This should bring up the 'default' VM in virtualbox.
 In case you are using linux or mac, the installation should be straight forward. So I am proceeding assuming docker has been started up.
 
-1. Checkout the project from GitHub. Open command prompt and navigate to the root of the project UserProfile.
+1. Checkout the project from GitHub. Open command prompt and navigate to the root of the project UserProfile. Run mvn clean install.
 2. Build the docker image using the following command
 ```
 Rootfolder> docker build -f Dockerfile -t docker-backend .
@@ -74,8 +74,8 @@ Rootfolder> @for /f "tokens=*" %i IN ('docker-machine env') DO @%i
 4. This should bring up the npm instance and it should run in the port 4200. Access 192.168.99.100:4200/login. Try to login with the credentials below.
 
 ## Using IDE(Intellij)
-1. Check out the code from github and import the project into Intellij.
-2. Run/Debug the application. This should boot up the spring boot application in port 8085.
+1. Check out the code from github and import the project into Intellij. Run mvn clean install, or go to the right to Maven option and run the lifeycle of clean, install.
+2. Next, run/debug the application. This should boot up the spring boot application in port 8085.
 3. Open the proxy.conf.json, and replace the 192.168.99.100 to localhost.
 4. Go to Terminal, and run the following commands
 ```
