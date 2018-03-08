@@ -70,14 +70,22 @@ Rootfolder> @for /f "tokens=*" %i IN ('docker-machine env') DO @%i
 ```
 > docker run -p 4200:4200 docker-backend
 ```
-4. This should bring up the npm instance and it should run in the port 4200.
+4. This should bring up the npm instance and it should run in the port 4200. Access 192.168.99.100:4200/login. Try to login with the credentials below.
 
+## Using IDE(Intellij)
+1. Check out the code from github and import the project into Intellij.
+2. Run/Debug the application. This should boot up the spring boot application in port 8085.
+3. Open the proxy.conf.json, and replace the 192.168.99.100 to localhost.
+4. Go to Terminal, and run the following commands
+```
+> cd frontend
+> npm start
+```
+5. This should bring up the npm server in port 4200.
+6. Access localhost:4200/login from the UI.
+7. Try to login with the credentials below.
 
-Once both are up, go to the browser and access
-
-localhost:4200/login
-
-You should see the home page and be prompted to login.
+## Credentials
 
 Admin
 ======
