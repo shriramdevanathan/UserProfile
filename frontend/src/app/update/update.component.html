@@ -1,0 +1,47 @@
+<div class="content" fxLayout="row" fxLayoutAlign="center">
+
+  <mat-card elevation="5" fxFlex>
+    <mat-card-title>
+      <h2>{{ title }}</h2>
+    </mat-card-title>
+
+    Users: <select (change) = "changeValue($event)" [(ngModel)]="selectedUser">
+
+      <option *ngFor="let c of users" [ngValue]="c">{{c.username}}</option>
+    </select>
+
+
+    <mat-card-content>
+
+      <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
+
+      <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #signupForm="ngForm">
+        <mat-input-container>
+          <label>Username: </label>
+          <input matInput formControlName="username" required>
+        </mat-input-container>
+
+        <mat-input-container>
+          <label>First Name: </label>
+          <input matInput formControlName="firstname">
+        </mat-input-container>
+        <mat-input-container>
+          <label>Last Name: </label>
+          <input matInput formControlName="lastname">
+        </mat-input-container>
+        <button type="submit" mat-raised-button color="primary">Update</button>
+      </form>
+      <br>
+
+      <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+      <label style="color:#F5F5F5" *ngIf="success">
+        Successfully updated !!!
+      </label>
+      <label style="color:red" *ngIf="userAccess">
+        Access Denied. Cannot get users.
+      </label>
+    </mat-card-content>
+
+  </mat-card>
+
+</div>

@@ -1,0 +1,68 @@
+.content {
+    width: 100%;
+  }
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+  mat-card {
+    max-width: 350px;
+    text-align: center;
+    animation: fadein 1s;
+    -o-animation: fadein 1s;
+    -moz-animation: fadein 1s;
+    -webkit-animation: fadein 1s;
+
+  }
+
+  mat-input-container {
+    display: block;
+  }
+
+  mat-spinner {
+    width: 25px;
+    height: 25px;
+    margin: 20px auto 0 auto;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+  }
+
+  .error {
+    color: #D50000;
+  }
+
+  .success {
+    color: #8BC34A;
+  }
+
+
+  @media screen and (max-width: 599px) {
+
+    .content {
+      /* https://github.com/angular/flex-layout/issues/295 */
+      display: block !important;
+    }
+
+    mat-card {
+      /* https://github.com/angular/flex-layout/issues/295 */
+      display: block !important;
+      max-width: 999px;
+    }
+
+  }
+
+  a {
+    text-decoration: none;
+    cursor: auto;
+    color: #FFFFFF;
+  }
