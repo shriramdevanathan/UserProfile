@@ -69,7 +69,7 @@ Rootfolder> @for /f "tokens=*" %i IN ('docker-machine env') DO @%i
 ```
 3. Run the docker image
 ```
-> docker run -p 4200:4200 docker-backend
+> docker run -p 4200:4200 docker-frontend
 ```
 4. This should bring up the npm instance and it should run in the port 4200. Access 192.168.99.100:4200/login. Try to login with the credentials below.
 
