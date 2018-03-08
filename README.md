@@ -73,9 +73,14 @@ Once both are up, go to the browser and access
 
 localhost:4200/login
 
-You should be prompted to login.
+You should see the home page and be prompted to login.
 
-ADMIN USER CREDS - admin/123
-NORMAL USER CREDS - normaluser/123
+Admin
+======
+Username: admin
+pass: 123
 
-
+Normal User
+===========
+Username: normaluser
+pass: 123
