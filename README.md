@@ -2,7 +2,7 @@
 
 Note 1: I have separated the two Dockerfiles for both front and back end and hence two different docker images. This is for scalability in that front end and back end guys can function separately and do separate builds. But both images will be on the same instance.
 
-It can be combined in one Dockerfile, but for convenience, I have separated it.
+It can be combined in one Dockerfile(or using docer compose), but for convenience, I have separated it.
 
 Note 2: Assuming maven and java 8 is installed. If not, please visit https://maven.apache.org/download.cgi and http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html and download the appropriate one for your OS.
 
