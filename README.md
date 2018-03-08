@@ -41,6 +41,7 @@ In case you face any issues like "the docker daemon may not be running" run the 
 Rootfolder> @for /f "tokens=*" %i IN ('docker-machine env') DO @%i
 ```
 It will take a while to import the required dependencies for the first time. Should be fast from second time as it will pick up from cache
+
 3. Run the docker image
 ```
 Rootfolder> docker run -p 8085:8085 docker-backend
