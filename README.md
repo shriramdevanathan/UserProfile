@@ -28,7 +28,7 @@ https://docs.docker.com/toolbox/toolbox_install_windows/
 
 ## Using Docker Image
 ### Back End Deployment
-Step 0. In case you are using windows, start up docker by clicking on "Docker Quickstart terminal". This should bring up the 'default' VM in virtualbox.
+0. In case you are using windows, start up docker by clicking on "Docker Quickstart terminal". This should bring up the 'default' VM in virtualbox.
 In case you are using linux or mac, the installation should be straight forward. So I am proceeding assuming docker has been started up.
 
 1. Open command prompt and navigate to the root of the project UserProfile.
