@@ -80,9 +80,10 @@ Rootfolder> @for /f "tokens=*" %i IN ('docker-machine env') DO @%i
 4. Go to Terminal, and run the following commands
 ```
 > cd frontend
+> npm install
 > npm start
 ```
-5. This should bring up the npm server in port 4200.
+5. This should bring up the npm server in port 4200. Note that npm install might take a while for the first time. Once it is run, subsequenty, just run npm start.
 6. Access localhost:4200/login from the UI.
 7. Try to login with the credentials below.
 
