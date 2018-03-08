@@ -10,7 +10,7 @@ It can be combined in one Dockerfile, but for convenience, I have separated it.
 - Please note that I have taken the liberty to implement the in-memory H2 database offered by Spring rather than storing in memory.
 - I have also integrated Swagger just to showcase functionality. The documentation may not be that comprehensive. It can be accessed from 192.168.99.100:8085/swagger-ui.html or localhost:8085/swagger-ui.html depending on how you deploy it.(explained later)
 - As per requirements, only admin user can read, write, update and delete users. 
-- Also implemented JWT token authentication configuring the token endpoints.
+- Also implemented JWT token authentication configuring the rest authentication entry points & token authentication filter.
 
 ## Front end
 - Completely developed using Angular 5(latest), HTML5, typescript and node.js
