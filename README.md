@@ -1,15 +1,20 @@
 # About project
 
-I have separated the two Dockerfiles for both front and back end and hence two different docker images. This is for scalability in that front end and back end guys can function separately and do separate builds. But both images will be on the same instance.
+Note 1: I have separated the two Dockerfiles for both front and back end and hence two different docker images. This is for scalability in that front end and back end guys can function separately and do separate builds. But both images will be on the same instance.
 
 It can be combined in one Dockerfile, but for convenience, I have separated it.
 
+Note 2: Assuming maven is installed. If not, please visit https://maven.apache.org/download.cgi and download the appropriate one for your OS.
+
+Note 3: This setup is for windows 10 as Docker works a little differently for Windows and Mac. Apart from that, it should work on both Windows and Mac. It is explained further later.
+
+If you want to just know the steps to run, skip to "Steps to run" Section
 
 ## Backend
 - This is a simple light weight Spring Boot application in a Micro services ecosystem powered by Docker. 
 - Please note that I have taken the liberty to implement the in-memory H2 database offered by Spring rather than storing in memory.
 - I have also integrated Swagger just to showcase functionality. The documentation may not be that comprehensive. It can be accessed from 192.168.99.100:8085/swagger-ui.html or localhost:8085/swagger-ui.html depending on how you deploy it.(explained later)
-- As per requirements, only admin user can read, write, update and delete users. 
+- As per requirements, only admin user can read, write, update and delete users. Normal users will be able to see all the options on the front end, but when they hit the API, it will give error. This is just to showcase API functionality.
 - Also implemented JWT token authentication configuring the rest authentication entry points & token authentication filter.
 
 ## Front end
@@ -31,7 +36,7 @@ https://docs.docker.com/toolbox/toolbox_install_windows/
 0. In case you are using windows, start up docker by clicking on "Docker Quickstart terminal". This should bring up the 'default' VM in virtualbox.
 In case you are using linux or mac, the installation should be straight forward. So I am proceeding assuming docker has been started up.
 
-1. Checkout the project from GitHub. Open command prompt and navigate to the root of the project UserProfile.
+1. Checkout the project from GitHub. Open command prompt and navigate to the root of the project UserProfile. Run mvn clean install.
 2. Build the docker image using the following command
 ```
 Rootfolder> docker build -f Dockerfile -t docker-backend .
@@ -74,8 +79,8 @@ Rootfolder> @for /f "tokens=*" %i IN ('docker-machine env') DO @%i
 4. This should bring up the npm instance and it should run in the port 4200. Access 192.168.99.100:4200/login. Try to login with the credentials below.
 
 ## Using IDE(Intellij)
-1. Check out the code from github and import the project into Intellij.
-2. Run/Debug the application. This should boot up the spring boot application in port 8085.
+1. Check out the code from github and import the project into Intellij. Run mvn clean install, or go to the right to Maven option and run the lifeycle of clean, install.
+2. Next, run/debug the application. This should boot up the spring boot application in port 8085.
 3. Open the proxy.conf.json, and replace the 192.168.99.100 to localhost.
 4. Go to Terminal, and run the following commands
 ```
