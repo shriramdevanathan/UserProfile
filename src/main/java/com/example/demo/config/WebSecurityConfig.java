@@ -23,7 +23,7 @@ import com.example.demo.security.auth.TokenAuthenticationFilter;
 import com.example.demo.services.impl.CustomUserDetailsService;
 
 /**
- * Created by fan.jin on 2016-10-19.
+ * Created by  Shriram srinidhi
  */
 
 @Configuration
