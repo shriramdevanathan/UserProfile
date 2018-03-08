@@ -2,12 +2,15 @@
 
 I have separated the two Dockerfiles for both front and back end and hence two different docker images. This is for scalability in that front end and back end guys can function separately and do separate builds. But both images will be on the same instance.
 
+It can be combined in one Dockerfile, but for convenience, I have separated it.
+
+
 ## Backend
 - This is a simple light weight Spring Boot application in a Micro services ecosystem powered by Docker. 
 - Please note that I have taken the liberty to implement the in-memory H2 database offered by Spring rather than storing in memory.
 - I have also integrated Swagger just to showcase functionality. The documentation may not be that comprehensive. It can be accessed from 192.168.99.100:8085/swagger-ui.html or localhost:8085/swagger-ui.html depending on how you deploy it.(explained later)
 - As per requirements, only admin user can read, write, update and delete users. 
-- Also implemented JWT token authentication.
+- Also implemented JWT token authentication configuring the token endpoints.
 
 ## Front end
 - Completely developed using Angular 5(latest), HTML5, typescript and node.js
@@ -19,13 +22,13 @@ I have separated the two Dockerfiles for both front and back end and hence two d
 
 # Steps to run
 I will give instructions to run the projects in two methods.
-- Using Docker Image(assumption is Docker is installed and running, OS is Windows 10). For Windows, please install Docker by following this link
+- Using Docker Image(assumption is Docker is installed and running, OS is Windows 10). For Windows, please install Docker by following this link.
 https://docs.docker.com/toolbox/toolbox_install_windows/
 - Using IDE(Intellij)
 
 ## Using Docker Image
 ### Back End Deployment
-0. In case you are using windows, start up docker by clicking on "Docker Quickstart terminal". This should bring up the 'default' VM in virtualbox.
+Step 0. In case you are using windows, start up docker by clicking on "Docker Quickstart terminal". This should bring up the 'default' VM in virtualbox.
 In case you are using linux or mac, the installation should be straight forward. So I am proceeding assuming docker has been started up.
 
 1. Open command prompt and navigate to the root of the project UserProfile.
@@ -93,5 +96,7 @@ pass: 123
 https://www.youtube.com/watch?v=ymlWt1MqURY
 
 2. There is a file in the frontend project called proxy.conf.json. Currently the ip is configured as 192.168.99.100. If you want the projects to work on localhost, make sure it is changed to localhost. Ideally, there should be a devmode and production mode.
+
+3. Enabling swagger-ui.html was a bit of challenge. Had to code a few configurations in the DemoApplication.java.
 
 
