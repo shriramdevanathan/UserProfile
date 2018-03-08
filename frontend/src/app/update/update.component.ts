@@ -111,6 +111,34 @@ export class UpdateComponent implements OnInit, OnDestroy {
         });
       }, err => {});
   }
+
+  onDeleteClick(){
+    this.notification = undefined;
+    this.submitted = true;
+    this.success = false;
+    this.failure  = false;
+
+
+    this.userService.deleteUser((this.selectedUser as any).id)
+    // show me the animation
+      .delay(1000)
+      .subscribe(data => {
+          console.log(data);
+          this.submitted = false;
+          this.success = true;
+          //quick fix
+          location.reload();
+
+        },
+        error => {
+          this.submitted = false;
+          this.failure = true;
+          //quick fix
+          location.reload();
+          console.log("Update error" + JSON.stringify(error));
+          this.notification = { msgType: 'error', msgBody: error['error'].message };
+        });
+  }
   onSubmit() {
 
     this.notification = undefined;

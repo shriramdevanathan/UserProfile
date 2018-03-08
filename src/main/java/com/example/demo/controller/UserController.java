@@ -67,11 +67,12 @@ public class UserController {
         return new ResponseEntity<User>(user, HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
     @ApiOperation(value="Delete user")
     @PreAuthorize("hasRole('USER')")
     public void deleteUser(@PathVariable Long id) {
         userService.deleteCustomer(id);
+
     }
 
 

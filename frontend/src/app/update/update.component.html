@@ -32,12 +32,15 @@
         <button type="submit" mat-raised-button color="primary">Update</button>
       </form>
       <br>
+      <button (click)="onDeleteClick()" mat-raised-button color="secondary">Delete</button>
 
       <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+      <br>
       <label style="color:#F5F5F5" *ngIf="success">
-        Successfully updated !!!
+        Successfully processed !!!
       </label>
       <label style="color:red" *ngIf="userAccess">
+        <br/>
         Access Denied. Cannot get users.
       </label>
     </mat-card-content>

@@ -45,5 +45,8 @@ export class UserService {
   updatetUser(user) {
     return this.apiService.put("/api/users", user);
   }
+  deleteUser(id){
+    return this.apiService.delete("/api/user/"+id);
+  }
 
 }
