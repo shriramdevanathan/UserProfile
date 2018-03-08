@@ -1,15 +1,20 @@
 # About project
 
-I have separated the two Dockerfiles for both front and back end and hence two different docker images. This is for scalability in that front end and back end guys can function separately and do separate builds. But both images will be on the same instance.
+Note 1: I have separated the two Dockerfiles for both front and back end and hence two different docker images. This is for scalability in that front end and back end guys can function separately and do separate builds. But both images will be on the same instance.
 
 It can be combined in one Dockerfile, but for convenience, I have separated it.
 
+Note 2: Assuming maven is installed. If not, please visit https://maven.apache.org/download.cgi and download the appropriate one for your OS.
+
+Note 3: This setup is for windows 10 as Docker works a little differently for Windows and Mac. Apart from that, it should work on both Windows and Mac. It is explained further later.
+
+If you want to just know the steps to run, skip to "Steps to run" Section
 
 ## Backend
 - This is a simple light weight Spring Boot application in a Micro services ecosystem powered by Docker. 
 - Please note that I have taken the liberty to implement the in-memory H2 database offered by Spring rather than storing in memory.
 - I have also integrated Swagger just to showcase functionality. The documentation may not be that comprehensive. It can be accessed from 192.168.99.100:8085/swagger-ui.html or localhost:8085/swagger-ui.html depending on how you deploy it.(explained later)
-- As per requirements, only admin user can read, write, update and delete users. 
+- As per requirements, only admin user can read, write, update and delete users. Normal users will be able to see all the options on the front end, but when they hit the API, it will give error. This is just to showcase API functionality.
 - Also implemented JWT token authentication configuring the rest authentication entry points & token authentication filter.
 
 ## Front end
