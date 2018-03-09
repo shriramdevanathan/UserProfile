@@ -8,6 +8,8 @@ Note 2: Assuming maven, java 8 and node.js is installed. If not, please visit ht
 
 Note 3: This setup is for windows 10 as Docker works a little differently for Windows and Mac. Apart from that, it should work on both Windows and Mac. It is explained further later.
 
+Note 4: Assuming Docker is installed from this link ->https://docs.docker.com/toolbox/toolbox_install_windows/ as other methods don't work in Windows 10 home version. If Docker is installed any other way, then the file proxy.conf.json needs to change accordingly.(explained later)
+
 If you want to just know the steps to run, skip to "Steps to run" Section
 
 ## Backend
