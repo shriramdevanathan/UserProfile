@@ -1,14 +1,14 @@
 {
 
   "/auth/*": {
-    "target": "http://192.168.99.100:8085",
+    "target": "http://localhost:8085",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
   },
 
   "/api/*": {
-    "target": "http://192.168.99.100:8085",
+    "target": "http://localhost:8085",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
