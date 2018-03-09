@@ -4,7 +4,7 @@ Note 1: I have separated the two Dockerfiles for both front and back end and hen
 
 It can be combined in one Dockerfile(or using docer compose), but for convenience, I have separated it.
 
-Note 2: Assuming maven and java 8 is installed. If not, please visit https://maven.apache.org/download.cgi and http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html and download the appropriate one for your OS.
+Note 2: Assuming maven, java 8 and node.js is installed. If not, please visit https://maven.apache.org/download.cgi and http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html and https://nodejs.org/en/download/ and download the appropriate one for your OS.
 
 Note 3: This setup is for windows 10 as Docker works a little differently for Windows and Mac. Apart from that, it should work on both Windows and Mac. It is explained further later.
 
